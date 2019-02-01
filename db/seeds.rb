@@ -7,16 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-puts "destroy database.."
+puts "Destroy database.."
 sleep(1)
 Gossip.destroy_all
 PrivateMessage.destroy_all
 City.destroy_all
 Tag.destroy_all
 User.destroy_all
-
-puts "ok"
-puts "delete from sqlite_sequence..."
+puts "Delete from sqlite_sequence..."
 sleep(1)
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'gossips'")
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'private_messages'")
@@ -24,9 +22,8 @@ ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'tags'")
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'")
 puts "Sucess, all DB deleted"
-puts ""
 sleep(1)
-puts "generate new DB..."
+puts "Generate new DB..."
 puts ""
 puts "_______________________________"
 puts ""
