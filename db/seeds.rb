@@ -23,25 +23,21 @@ ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'cities'")
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'tags'")
 ActiveRecord::Base.connection.execute("DELETE from sqlite_sequence where name = 'users'")
-puts "Sucess, old DB deleted"
+puts "Sucess, all DB deleted"
 puts ""
-
 sleep(1)
-
 puts "generate new DB..."
-
 puts ""
 puts "_______________________________"
 puts ""
-
-sleep(1)
+sleep(1.5)
 
 10.times do
 	city = City.create!(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
   puts "#{city.name} is a little Gossip World"
 end
-sleep(1)
 
+sleep(1)
 puts "_______________________________"
 puts ""
 
@@ -55,8 +51,8 @@ puts ""
   puts ""
   puts "~~~~~~~~~~~~~~~~~~~next~~~~~~~~~~~~~~~~>"
 end
-sleep(1)
 
+sleep(1)
 puts "_______________________________"
 puts ""
 
@@ -71,7 +67,6 @@ puts ""
 end
 
 sleep(1)
-
 puts "_______________________________"
 puts ""
 
@@ -82,7 +77,6 @@ puts ""
 end
 
 sleep(1)
-
 puts "_______________________________"
 puts ""
 
